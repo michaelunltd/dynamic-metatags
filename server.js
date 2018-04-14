@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.set('view engine', 'pug');
 
@@ -9,12 +9,11 @@ app.use((req, res, next) => {
   next();
 })
 
-app.get('/home/:id', (req, res) => {
+app.get('/contact/:id', (req, res) => {
   res.render('index', {
-    title: `CoralRoad ${req.params.id}`,
-    message: `Welcome to Coral Road ${req.params.id}`,
-    url: 'http://coralroad.com',
-    description: "Travel better together. Get pre-launch VIP access to special deals on Coral Road when two of your friends sign up, and the world's most eco-friendly water bottle from Yuhme to take on your next trip when 10 friends sign up.",
+    title: `2 CoralRoad ${req.params.id}`,
+    message: `2 Welcome to Coral Road ${req.params.id}`,
+    description: "2 Travel better together. Get pre-launch VIP access to special deals on Coral Road when two of your friends sign up, and the world's most eco-friendly water bottle from Yuhme to take on your next trip when 10 friends sign up.",
     image : `http://coralroad.com/images/hero.jpg`
   });
 });
